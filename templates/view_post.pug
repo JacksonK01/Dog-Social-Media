@@ -1,0 +1,19 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title #{post.title}
+    link(rel='stylesheet' href='/css/main.css')
+    script(src='/js/comment.js' defer)
+
+include util/nav
+include util/post_layout_mixin
+
++post_layout(post, account, false)
+p(id="id" hidden)= post.id
+if post.deleted === 0 && account !== undefined
+    form#leave-comment
+        input(type="text" name="comment" id="comment" placeholder="Leave a comment..." required)
+        // Source: https://stackoverflow.com/questions/1878264/how-do-i-make-an-html-button-not-reload-the-page
+        button#submit(type='button') Send
+
+div#comment-section

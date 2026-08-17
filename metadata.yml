@@ -1,0 +1,12 @@
+---
+:id: 378436887
+:submitters:
+- :name: Jackson Kirchner
+  :email: kirch354@umn.edu
+:created_at: !ruby/object:ActiveSupport::TimeWithZone
+  utc: 2025-12-15 23:59:38.546420000 Z
+  zone: !ruby/object:ActiveSupport::TimeZone
+    name: America/Los_Angeles
+  time: 2025-12-15 15:59:38.546420000 Z
+:status: processed
+:score: 100.0

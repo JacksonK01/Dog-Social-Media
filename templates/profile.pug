@@ -1,0 +1,21 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title #{account.username}
+    link(rel='stylesheet' href='/css/main.css')
+include util/nav
+include util/get_pfp_mixin
+div#profile-page
+    div#profile-div
+        + get_pfp(account.pfp_option)
+        div#profile-info
+            h1 Username: #{account.username}
+            p Account Creation Date: #{account.creation_date}
+            p
+                |Status:
+                if account.admin === 1
+                    |  Admin
+                else
+                    |  User
+        form(METHOD="POST" action="/logout")
+            input(type="submit" value="Logout")

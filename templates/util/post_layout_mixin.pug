@@ -1,0 +1,36 @@
+script(src='/js/post_layout.js' defer='')
+include get_pfp_mixin
+
+mixin post_layout(post, account, is_preview)
+    if !is_preview
+        //This is a flag for the java script to behave slightly differently on deletion
+        p(id="not-preview-flag" hidden)
+    div(id='post-' + post.id).post
+        if post.deleted === 1
+            div#error-section
+                h2 WARNING: This post has been deleted by either an admin or the original poster
+                p Only the original poster or admins can view this post now
+        p#post-id(hidden) #{post.id}
+        div#body
+            div#profile
+                +get_pfp(post.pfp_option)
+                h3 #{post.username}
+                if post.admin === 1
+                    p Admin
+            h2 #{post.title}
+            if is_preview && post.content.length > 200
+                - var new_content = post.content.substring(0, 200) + "... "
+                p#content
+                    | #{new_content}
+                    strong Click Post to view the rest
+            else
+                p#content #{post.content}
+            - var date = `Date Posted: ${post.origin_date}`
+            if post.edit_date !== null
+                - date += ` (Edited: ${post.edit_date})`
+            h5= date
+        div#buttons
+            if post.deleted === 0 && account !== undefined && (account.username === post.username || account.admin === 1)
+                button#edit Edit
+                button#delete Delete
+

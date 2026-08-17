@@ -1,0 +1,22 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title Post
+    link(rel='stylesheet' href='/css/main.css')
+    script(src='/js/date_updater.js' defer='')
+include util/nav
+div#create-post
+    h1.page-title Create a post!
+    div#create-div
+        form(method='POST' action='/confirm_post')#create
+                div.column
+                    label(for="title") Title
+                    input(type='text' name='title' id='title' required)
+                div.column
+                    label(for="content") Content
+                    textarea(name='content' id='content' required)
+                div#create-footer
+                    p
+                        | Date Posted:
+                        span#display_date No date yet
+                    input(type='submit' value='Post')

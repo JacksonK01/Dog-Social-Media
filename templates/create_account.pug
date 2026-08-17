@@ -1,0 +1,33 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title Account Creation
+    link(rel='stylesheet' href='/css/main.css')
+    script(src="/js/create_account.js" defer)
+include util/nav
+include util/get_pfp_mixin
+div#create-account-page
+    div#error-section(hidden)
+        h2 Unable to create account
+        p
+            | Reason:
+            span#error
+    h1.page-title Create a Woofer Account:
+    form#account_form()
+        label(for="username") Username
+        //20 Is max length used in schema.sql
+        input(type="text" id="username" name="username" required)
+        label(for="password") Password
+        input(type="password" id="password" name="password" required)
+        // Source: Chapter 3.3 of zyBooks
+        fieldset(name='pfp-option' id='pfp-option')
+            legend Select Profile Picture:
+            - var n = 1
+            while n <= 9
+                div.pfp
+                    input(type='radio' name='pfp-option' id=n value=n)
+                    label(for=n)
+                        +get_pfp(n)
+                    - n++
+
+        button#submit-account(type='button') Create

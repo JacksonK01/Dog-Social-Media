@@ -1,0 +1,406 @@
+:root {
+    --primary-color: #B6D9E0;
+    --secondary-color: #335765;
+    --tertiary-color: #74A8A4;
+    --quaternary-color: #DBE2DC;
+    --quinary-color: #7F543D;
+
+    --post-hover: antiquewhite
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+strong {
+    color: var(--secondary-color);
+}
+
+p, h5, h2, h1, legend {
+    color: var(--quinary-color)
+}
+
+img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    border: 2px solid var(--secondary-color);
+}
+
+div#comment-profile > img {
+    height: 50px;
+    width: 50px;
+}
+
+button {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+
+    height: 5vh;
+    width: 9vh;
+    border-radius: 8px;
+    margin: 5px;
+    border: 0 none;
+}
+
+button:hover {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+div#profile, div#comment-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+fieldset#pfp-option {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.center_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: var(--primary-color);
+}
+
+div#error-section {
+    margin-top: 10px;
+    width: 403px;
+    text-align: center;
+    background-color: indianred;
+    border: darkred 3px solid;
+}
+
+div#error-section > * {
+    color: black;
+}
+
+/*Nav*/
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--secondary-color);
+    height: auto;
+
+    position: sticky;
+    top: 0;
+}
+
+a {
+    color: var(--quaternary-color);
+    background-color: var(--tertiary-color);
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10%;
+    font-size: 20px;
+}
+
+a:hover {
+    color: var(--tertiary-color);
+    background-color: var(--quaternary-color);
+}
+
+/*Homepage*/
+
+div#profile > h3 {
+    color: var(--secondary-color);
+    margin: 5px
+}
+
+div#middle {
+    height: 80%;
+}
+
+div#sidebar {
+    width: 20%;
+    height: 100%;
+}
+
+div#main {
+    width: 80%;
+    height: 100%;
+    flex-direction: column;
+}
+
+*.page-title {
+    padding: 10px;
+    color: var(--secondary-color);
+    background-color: var(--quaternary-color);
+    border-radius: 5px;
+    font-size: 50px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer > * {
+    margin: 3px;
+}
+
+div.post {
+    border: 3px solid var(--tertiary-color);
+    width: 80%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--quaternary-color);
+}
+
+div.post:hover {
+    background-color: antiquewhite;
+}
+
+/* Source: https://stackoverflow.com/questions/1147877/how-to-word-wrap-text-in-html */
+p#content {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+div#user-profile {
+    min-width: 15%;
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--quaternary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border-radius: 10%;
+    border: 3px solid var(--tertiary-color);
+}
+
+div#user-profile > p {
+    word-wrap: break-word;
+}
+
+/*Search Page*/
+
+div.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form#search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--quaternary-color);
+    height: 20%;
+    border-radius: 5px;
+}
+
+form > * {
+    margin: 10px;
+    padding: 10px;
+}
+
+input[type=submit], button#submit, button#submit-account {
+    color: white;
+    background-color: dodgerblue;
+    border: 0;
+    border-radius: 5px;
+}
+
+input[type=submit]:hover, button#submit:hover, button#submit-account:hover {
+    color: dodgerblue;
+    background-color: white;
+}
+
+label {
+    color: var(--quinary-color)
+}
+
+*.column {
+    display: flex;
+    flex-direction: column;
+}
+
+/*Source: https://stackoverflow.com/questions/5235142/how-do-i-disable-the-resizable-property-of-a-textarea */
+
+textarea {
+    width: 50vh;
+    height: 20vh;
+    resize: none;
+}
+
+/*Create a post*/
+
+div#create-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form#create {
+    display: flex;
+
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--quaternary-color);
+    border-radius: 5px;
+    width: 80vh;
+    height: 80vh;
+    margin-bottom: 5vh;
+}
+
+form#create > div.column > label {
+    font-size: 7vh;
+}
+
+form#create > div.column > input {
+    padding: 10px;
+}
+
+form#create > div#create-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form#create > div#create-footer > input[type=submit] {
+    width: 30%;
+    height: 5vh;
+}
+
+div#create-post {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/*Login Page*/
+div#login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form#login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--quaternary-color);
+    width: 40vh;
+    border-radius: 3px;
+}
+
+div#login-page > div#form-login > form > div > * {
+    margin: 5px;
+    padding: 5px;
+}
+
+/*Edit page*/
+div#edit-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form#edit-form {
+    display: flex;
+    background-color: var(--quaternary-color);
+    justify-content: center;
+    flex-direction: column;
+}
+
+/*Profile Page*/
+div#profile-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#profile-div {
+    margin: 5vh;
+    padding: 5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    background-color: var(--quaternary-color);
+}
+
+/*Create Account*/
+div#create-account-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 5vh;
+}
+
+form#account_form {
+    border-radius: 5px;
+    background-color: var(--quaternary-color);
+}
+
+div.pfp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Comment Section*/
+div#comment-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+div.comment {
+    border: 3px solid var(--tertiary-color);
+    width: 40%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--quaternary-color);
+}
+
+div.comment:hover {
+    background-color: var(--post-hover);
+}
+
+div.comment > p {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+div#comment-profile > h4 {
+    color: var(--secondary-color)
+}
+
+div.comment > h6 {
+    color: var(--quinary-color)
+}
+
+form#leave-comment {
+    background-color: var(--quaternary-color);
+    display: inline-block;
+    margin: 1vh;
+    border-radius: 10px;
+}
+
+div.post > div#error-section {
+    width: 80%;
+    margin: 5vh;
+}

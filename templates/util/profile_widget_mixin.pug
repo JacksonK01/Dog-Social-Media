@@ -1,0 +1,19 @@
+include get_pfp_mixin
+mixin create_profile_widget(account)
+    div#user-profile
+        if account !== undefined
+                +get_pfp(account.pfp_option)
+                p
+                    strong User:
+                    |  #{account.username}
+                if account.admin === 1
+                    p
+                        strong Status:
+                        |  Admin
+                form(METHOD="POST" action="/logout")
+                    input(type="submit" value="Logout")
+        else
+            p Make sure to create an account or login!
+
+
+

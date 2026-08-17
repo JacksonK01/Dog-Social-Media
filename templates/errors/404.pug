@@ -1,0 +1,9 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title File Not Found
+    link(rel='stylesheet' href='/css/main.css')
+include ../util/nav
+p File Not Found
+if error !== undefined
+    p Error: #{error}

@@ -1,0 +1,21 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title Search
+    link(rel='stylesheet' href='/css/main.css')
+include util/nav
+include util/post_layout_mixin
+include util/profile_widget_mixin
+div.form-container
+    +create_profile_widget(account)
+    h1.page-title Search Woofer's Posts!
+    form(method='GET', action='/search')#search
+        label(for="keyword") Search for a post:
+        input(type="text" id="keyword" name="keyword" placeholder="Type in keywords" minlength="1" required)
+        input(type="submit" value="Search")
+    if posts.length > 0
+        each post in posts
+            +post_layout(post, account, true)
+    else
+        h2.page-title No posts found
+        h2.page-title Try adjusting your search

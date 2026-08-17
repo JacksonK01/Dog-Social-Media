@@ -1,0 +1,5 @@
+mixin get_pfp(pfp_option)
+    if 0 < pfp_option && pfp_option <= 9
+        img(src='/images/pfp-' + pfp_option + ".png")
+    else
+        img(src='/images/pfp-generic.png')

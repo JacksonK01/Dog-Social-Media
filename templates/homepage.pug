@@ -1,0 +1,23 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title Homepage
+    link(rel='stylesheet' href='/css/main.css')
+include util/nav
+include util/post_layout_mixin
+include util/profile_widget_mixin
+div#middle.center_content
+    div#main.center_content
+        +create_profile_widget(account)
+        h2.page-title Woofer's Recent Posts
+        each post in posts
+            +post_layout(post, account, true)
+
+footer
+    p Pages:
+    - var n = 0;
+    while n < amount_of_pages
+        a(href="/home/" + n) #{n + 1}
+        - n++
+
+

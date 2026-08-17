@@ -1,0 +1,24 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title #{post.title}
+    link(rel='stylesheet' href='/css/main.css')
+    //Reused for the timer
+    script(src='/js/date_updater.js' defer='')
+include util/nav
+div#edit-div
+    -var is_deleted = post.deleted === 1
+    h1.page-title Edit Post: #{post.title}
+    if is_deleted
+        p This post has since been deleted by either you or a moderator
+    else
+        form(method='POST' action='/confirm_edit')#edit-form
+            input(type='text' name='id' id='id' value=post.id hidden)
+            label(for="title") Edit Title:
+            input(type='text' name='title' id='title' value=post.title required)
+            label(for="content") Edit Content:
+            textarea(name='content' id='content' required) #{post.content}
+            p
+                | Date Edited:
+                span#display_date No date yet
+            input(type='submit' value='Submit Edit')

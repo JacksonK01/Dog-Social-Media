@@ -1,0 +1,23 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title Login
+    link(rel='stylesheet' href='/css/main.css')
+    script(src='/js/login.js', defer)
+include util/nav
+div#login-page.column
+    div#error-section(hidden)
+        h2 Unable to login
+        p
+            | Reason:
+            span#error
+    h1.page-title Log into a Woofer Account
+    div#form-login.form-container
+        form#login-form
+            div
+                label(for='username') Username
+                input(type='text' name='username' id='username')
+            div
+                label(for='password') Password
+                input(type='password' name='password' id='password')
+            button#submit(type='button') Login
